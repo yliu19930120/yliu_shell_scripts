@@ -3,13 +3,14 @@ projects=('yliu_executer' 'yliu_scheduler')
 declare -A alia=([ec]=yliu_executer [sc]=yliu_scheduler)
 workPath=/home/admin/java/work/
 javaPath=/home/admin/java/yliu/
+setGradlePath=/home/admin/yliu_shell_scripts/gradle/settings.gradle
 
 function package(){
 	echo "------------------------------我是分割线---------------------------------"
 	project=$1	
 	jarPath=${project}/build/libs/${project}-all.jar
 	echo '打包项目:'${project}
-	gradle ${project}:clean ${project}:shadowJar
+	gradle ${project}:clean ${project}:shadowJar -c $setGradlePath
 	echo '复制到工作目录:'
 	cp ${jarPath} ${workPath}/${project}-all.jar -f 
 }
@@ -23,6 +24,9 @@ function guide(){
 function main(){
 	
 	currentPath=`pwd`
+	
+	test -d $javaPath || mkdir -p $javaPath
+	
 	cd ${javaPath}
 	
 	guide
