@@ -25,7 +25,7 @@ function main(){
 	
 	currentPath=`pwd`
 	
-	test -d $javaPath || mkdir -p $javaPath
+	test -d $workPath || mkdir -p $workPath
 	
 	cd ${javaPath}
 	
