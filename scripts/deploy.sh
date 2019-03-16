@@ -10,7 +10,7 @@ function package(){
 	project=$1	
 	jarPath=${project}/build/libs/${project}-all.jar
 	echo '打包项目:'${project}
-	gradle ${project}:clean ${project}:shadowJar -c $setGradlePath
+	gradle ${project}:clean ${project}:shadowJar
 	echo '复制到工作目录:'
 	cp ${jarPath} ${workPath}/${project}-all.jar -f 
 }
