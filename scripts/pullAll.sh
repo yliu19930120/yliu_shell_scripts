@@ -14,7 +14,7 @@ test -d $projectPath || mkdir -p $projectPath
 #拉取函数 参数1:工作路径;参数2:拉取的项目
 function pullOrClone(){
 	
-	projectPat=$1
+	projectPath=$1
 	projects=$2
 	
 	echo "进入到路径:$projectPath"
