@@ -15,11 +15,11 @@ test -d $projectPath || mkdir -p $projectPath
 function pullOrClone(){
 	
 	projectPath=$1
-	projects=$2
+	projects=`echo $2`
 	
 	echo "进入到路径:$projectPath"
 	cd $projectPath
-	
+	echo "$projects"	
 	for p in ${projects}
 	do 
 		echo '拉取项目:'${p}
@@ -33,9 +33,9 @@ function pullOrClone(){
 	fi
 	done
 	}
-
-pullOrClone $javaProPath ${javaProjects[@]}
-
-pullOrClone $scriptsPath ${sciptsProjects[@]}
+echo "拉取java项目"
+pullOrClone $javaProPath "${javaProjects[*]}"
+echo "拉取脚本项目"
+pullOrClone $scriptsPath "${sciptsProjects[*]}"
 
 cd $currentPath
