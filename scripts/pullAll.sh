@@ -11,7 +11,7 @@ currentPath=`pwd`
 
 test -d $projectPath || mkdir -p $projectPath
 
-#拉取函数 参数1:工作路径;参数2:拉取的项目
+#拉取函数 参数1:工作路径;参数2:拉取的项目(注意是数组)
 function pullOrClone(){
 	
 	projectPath=$1
@@ -20,7 +20,7 @@ function pullOrClone(){
 	echo "进入到路径:$projectPath"
 	cd $projectPath
 	
-	for p in ${projects[@]}
+	for p in ${projects}
 	do 
 		echo '拉取项目:'${p}
 	if [ -e ${p} ]
@@ -34,8 +34,8 @@ function pullOrClone(){
 	done
 	}
 
-pullOrClone $javaProPath $javaProjects
+pullOrClone $javaProPath ${javaProjects[@]}
 
-pullOrClone $scriptsPath $sciptsProjects
+pullOrClone $scriptsPath ${sciptsProjects[@]}
 
 cd $currentPath
