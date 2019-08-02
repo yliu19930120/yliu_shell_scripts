@@ -5,6 +5,7 @@ githost='git@github.com:yliu19930120/'
 javaProPath=/home/admin/java/yliu/
 scriptsPath=/home/admin/
 javaProjects=('yliu_base_server' 'yliu_crawler' 'yliu_crawler_core' 'yliu_executer' 'yliu_utils_mongo' 'yliu_scheduler' 'yliu_utils_redis')
+serverProjects=('yliu_msg_appserver')
 sciptsProjects=('yliu_shell_scripts')
 
 currentPath=`pwd`
@@ -35,6 +36,8 @@ function pullOrClone(){
 	}
 echo "拉取java项目"
 pullOrClone $javaProPath "${javaProjects[*]}"
+echo "拉取server项目"
+pullOrClone $javaProPath "${serverProjects[*]}"
 echo "拉取脚本项目"
 pullOrClone $scriptsPath "${sciptsProjects[*]}"
 
