@@ -5,7 +5,7 @@ githost='git@github.com:yliu19930120/'
 javaProPath=/home/admin/java/yliu/
 scriptsPath=/home/admin/
 javaProjects=('yliu_base_server' 'yliu_crawler' 'yliu_crawler_core' 'yliu_executer' 'yliu_utils_mongo' 'yliu_scheduler' 'yliu_utils_redis' 'yliu_base_core')
-serverProjects=('yliu_msg_appserver')
+serverProjects=('yliu_appserver')
 sciptsProjects=('yliu_shell_scripts')
 
 currentPath=`pwd`
