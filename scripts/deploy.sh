@@ -1,6 +1,5 @@
 #!bin/bash
-projects=('yliu_executer' 'yliu_scheduler')
-declare -A alia=([ec]=yliu_executer [sc]=yliu_scheduler)
+declare -A alia=([ec]=yliu_executer [sc]=yliu_scheduler [as]=yliu_appserver)
 workPath=/home/admin/java/work/
 javaPath=/home/admin/java/yliu/
 setGradlePath=/home/admin/yliu_shell_scripts/gradle/settings.gradle
