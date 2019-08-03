@@ -18,6 +18,7 @@ function package(){
 function guide(){
 	echo "支持以下程序包"
 	echo "[jar程序] yliu_executer(ec)|yliu_scheduler(sc)"
+	echo "[server程序] yliu_appserver(as)"
 	echo ""
 	echo "输入发布项目,多个项目用空格隔开"
 
