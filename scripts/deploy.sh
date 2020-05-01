@@ -1,7 +1,7 @@
 #!bin/bash
 declare -A alia=([ec]=yliu_executer [sc]=yliu_scheduler [as]=yliu_appserver)
 workPath=/home/admin/java/work/
-javaPath=/home/admin/java/yliu/
+javaPath=/home/admin/code/
 setGradlePath=/home/admin/yliu_shell_scripts/gradle/settings.gradle
 
 #接收两个参数1:打包的项目，2:打包的命令
