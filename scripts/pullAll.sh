@@ -38,7 +38,7 @@ echo "拉取java项目"
 pullOrClone $javaProPath "${javaProjects[*]}"
 echo "拉取server项目"
 pullOrClone $javaProPath "${serverProjects[*]}"
-echo "拉取脚本项目"
-pullOrClone $scriptsPath "${sciptsProjects[*]}"
+#echo "拉取脚本项目"
+#pullOrClone $scriptsPath "${sciptsProjects[*]}"
 
 cd $currentPath
