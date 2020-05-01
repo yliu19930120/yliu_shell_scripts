@@ -2,8 +2,8 @@
 #代码拉取脚本
 
 githost='git@github.com:yliu19930120/'
-javaProPath=/home/admin/java/yliu/
-scriptsPath=/home/admin/
+javaProPath=/home/admin/code/
+scriptsPath=/home/admin/code/
 javaProjects=('yliu_base_server' 'yliu_crawler' 'yliu_crawler_core' 'yliu_executer' 'yliu_utils_mongo' 'yliu_scheduler' 'yliu_utils_redis' 'yliu_base_core')
 serverProjects=('yliu_appserver')
 sciptsProjects=('yliu_shell_scripts')
@@ -38,7 +38,7 @@ echo "拉取java项目"
 pullOrClone $javaProPath "${javaProjects[*]}"
 echo "拉取server项目"
 pullOrClone $javaProPath "${serverProjects[*]}"
-#echo "拉取脚本项目"
-#pullOrClone $scriptsPath "${sciptsProjects[*]}"
+echo "拉取脚本项目"
+pullOrClone $scriptsPath "${sciptsProjects[*]}"
 
 cd $currentPath
