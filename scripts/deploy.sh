@@ -1,6 +1,7 @@
 #!bin/bash
 baseJars=(yliu_utils_redis yliu_utils_mongo yliu_base_core yliu_base_server yliu_crawler_core)
 declare -A alia=([ec]=yliu_executer [sc]=yliu_scheduler [as]=yliu_appserver  [sd]=yliu_scheduler_server)
+appserver=(yliu_appserver yliu_scheduler_server)
 workPath=/home/admin/java/work/
 javaPath=/home/admin/code/
 version="1.0-SNAPSHOT"
@@ -59,7 +60,8 @@ function main(){
 		test pacBase==0 && packBaseJars && pacBase=1
 
 		cmd=shadowJar
-		test ${project} =~ "appserver" && cmd=build
+		echo "${appserver[@]}" | grep -wq "${project}" &&  cmd=build
+#		test ${project} =~ "appserver" && cmd=build
 		package ${project}  ${cmd}
 
 		proid=`ps -ef | grep ${project} | grep -v grep | awk '{print $2}'`
