@@ -10,10 +10,11 @@ version="1.0-SNAPSHOT"
 function package(){
 	echo "------------------------------我是分割线---------------------------------"
 	project=$1
+	cmd=$2
 	jarPath=target/${project}-${version}.jar
 	cd ${project}
 	echo '打包项目:'${project}
-	mvn clean assembly:assembly
+	mvn clean ${cmd} -DskipTests
 	echo '复制到工作目录:'
 	cp ${jarPath} ${workPath}/${project}.jar -f
 	cd ..
@@ -59,8 +60,8 @@ function main(){
 		test -z ${project} && echo "ERROR:程序名称错误" && continue
 		test pacBase==0 && packBaseJars && pacBase=1
 
-		cmd=shadowJar
-		echo "${appserver[@]}" | grep -wq "${project}" &&  cmd=build
+		cmd=assembly:assembly
+		echo "${appserver[@]}" | grep -wq "${project}" &&  cmd=install
 #		test ${project} =~ "appserver" && cmd=build
 		package ${project}  ${cmd}
 
@@ -74,7 +75,8 @@ function main(){
 		echo "启动程序 ${project} 日志输出到${workPath}logs/${project}.log"
 		cd ${workPath}
 		proName=${project}.jar
-		test ${project} =~ "appserver" && proName=${project}.jar
+		#test ${project} =~ "appserver" && proName=${project}.jar
+		echo "${appserver[@]}" | grep -wq "${project}" && proName=${project}.jar
 		nohup java -jar ${proName} >>/dev/null  2>&1 &
 		cd ${javaPath}
 	done
@@ -85,4 +87,3 @@ function main(){
 }
 
 main
-
