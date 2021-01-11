@@ -37,7 +37,7 @@ function main(){
 		echo "启动程序 ${project} 日志输出到${workPath}${project}.log"
 		cd ${workPath}
 
-		nohup python3 ${proName}/app.py >>/dev/null  2>&1 &
+		nohup python3 ${proName}/app.py >>${workPath}${project}.log  2>&1 &
 	done
 	echo ' '
 	echo '打包完了..........'
