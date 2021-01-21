@@ -1,5 +1,5 @@
 #!bin/bash
-baseJars=(yliu_utils_redis yliu_utils_mongo yliu_base_core yliu_base_server yliu_crawler_core)
+baseJars=(yliu_utils_redis yliu_utils_mongo yliu_base_core yliu_base_server yliu_crawler_core yliu_calculator)
 declare -A alia=([ec]=yliu_executer [sc]=yliu_scheduler [as]=yliu_appserver  [sd]=yliu_scheduler_server  [cs]=yliu_consumer_server)
 appserver=(yliu_appserver yliu_scheduler_server yliu_consumer_server)
 workPath=/home/admin/java/work/
