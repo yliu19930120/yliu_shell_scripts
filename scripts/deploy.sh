@@ -52,7 +52,19 @@ function main(){
 	guide
 	read -e name
 	names=`(echo ${name})`
-	pacBase=0
+
+	echo "是否打包基础包(0/1)"
+	read -e pacBase
+
+	if [ "$pacBase" == "0" ]; then
+		echo "打包基准包"
+	elif [ "$pacBase" == "1" ]; then
+		echo "不打包基础包"
+	else
+		echo "命令不正确"
+		exit
+	fi
+
 	for n in ${names[@]}
 	do
 		project=
