@@ -70,7 +70,7 @@ function main(){
 		project=
 		test -n ${alia[$n]} && project=${alia[$n]}
 		test -z ${project} && echo "ERROR:程序名称错误" && continue
-		test pacBase==0 && packBaseJars && pacBase=1
+		test "$pacBase" == "0" && packBaseJars && pacBase=1
 
 		cmd=assembly:assembly
 		echo "${appserver[@]}" | grep -wq "${project}" &&  cmd=install
