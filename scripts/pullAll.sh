@@ -3,7 +3,7 @@
 
 githost='git@github.com:yliu19930120/'
 javaProPath=/home/admin/code/
-javaProjects=('yliu_base_server' 'yliu_crawler' 'yliu_crawler_core' 'yliu_executer' 'yliu_utils_mongo' 'yliu_scheduler' 'yliu_utils_redis' 'yliu_base_core' 'yliu_scheduler_server' 'yliu_data_akshare' 'yliu_calculator')
+javaProjects=('yliu_base_server' 'yliu_crawler' 'yliu_crawler_core' 'yliu_executer' 'yliu_utils_mongo' 'yliu_scheduler' 'yliu_utils_redis' 'yliu_base_core' 'yliu_scheduler_server' 'yliu_data_akshare' 'yliu_calculator' 'yliu_file')
 serverProjects=('yliu_appserver' 'yliu_consumer_server')
 sciptsProjects=('yliu_shell_scripts')
 
