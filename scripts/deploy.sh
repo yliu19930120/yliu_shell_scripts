@@ -1,7 +1,7 @@
 #!bin/bash
 baseJars=(yliu_utils_redis yliu_utils_mongo yliu_base_core yliu_base_server yliu_crawler_core yliu_file yliu_calculator)
-declare -A alia=([ec]=yliu_executer [sc]=yliu_scheduler [as]=yliu_appserver  [sd]=yliu_scheduler_server  [cs]=yliu_consumer_server)
-appserver=(yliu_appserver yliu_scheduler_server yliu_consumer_server)
+declare -A alia=([ec]=yliu_executer [sc]=yliu_scheduler [as]=yliu_appserver  [sd]=yliu_scheduler_server  [cs]=yliu_consumer_server [bks]=yliu_bksys_server)
+appserver=(yliu_appserver yliu_scheduler_server yliu_consumer_server yliu_bksys_server)
 workPath=/home/admin/java/work/
 javaPath=/home/admin/code/
 version="1.0-SNAPSHOT"
@@ -22,7 +22,7 @@ function package(){
 function guide(){
 	echo "支持以下程序包"
 	echo "[jar程序] yliu_executer(ec)|yliu_scheduler(sc)"
-	echo "[server程序] yliu_appserver(as) yliu_scheduler_server(sd) yliu_consumer_server(cs)"
+	echo "[server程序] yliu_appserver(as) yliu_scheduler_server(sd) yliu_consumer_server(cs) yliu_bksys_server(bks)"
 	echo ""
 	echo "输入发布项目,多个项目用空格隔开"
 
